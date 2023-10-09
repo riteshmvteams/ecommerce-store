@@ -5,3 +5,4 @@ export { default as HeroSection } from "./HeroSection";
 export { default as ProductSlider } from "./ProductSlider";
 export { default as RecommendedProducts } from "./RecommendedProducts";
 export { default as CtaSection } from "./CtaSection";
+export { default as WishlistSidebar } from "./WishlistSidebar";

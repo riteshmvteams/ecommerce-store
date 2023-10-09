@@ -11,6 +11,7 @@ import {
   RegisterPage,
   SingleProduct,
 } from "./pages";
+import CartPage from "./pages/CartPage";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: "/products/:id",
         element: <SingleProduct />,
+      },
+      {
+        path: "/cart",
+        element: <CartPage />,
       },
       {
         path: "about",
