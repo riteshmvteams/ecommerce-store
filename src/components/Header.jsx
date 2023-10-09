@@ -5,6 +5,7 @@ import { HiMenu } from "react-icons/hi";
 import TopBar from "./TopBar";
 import HeaderIconButtons from "./HeaderIconButtons";
 import NavBarLinks from "./NavBarLinks";
+import WishlistSidebar from "./WishlistSidebar";
 
 export default function Header() {
   const [isExpand, setIsExpand] = useState(false);
@@ -14,31 +15,34 @@ export default function Header() {
   };
 
   return (
-    <header className="relative">
-      <TopBar />
-      <div className="bg-deep-300">
-        <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-          <Link
-            to="/"
-            className="bg-accent-200 rounded-md px-4 py-2 hover:bg-accent-300 duration-200 transition-all hidden md:inline-block"
-          >
-            <span className="text-deep-300 font-extrabold text-xl">ES</span>
-          </Link>
+    <>
+      <header className="relative">
+        <TopBar />
+        <div className="bg-deep-300">
+          <div className="container mx-auto px-4 py-3 flex items-center justify-between">
+            <Link
+              to="/"
+              className="bg-accent-200 rounded-md px-4 py-2 hover:bg-accent-300 duration-200 transition-all hidden md:inline-block"
+            >
+              <span className="text-deep-300 font-extrabold text-xl">ES</span>
+            </Link>
 
-          <button
-            className="bg-accent-200 rounded-md px-4 py-2 hover:bg-accent-300 duration-200 transition-all md:hidden"
-            onClick={toggleMenu}
-          >
-            <span className="text-deep-300 font-extrabold text-xl">
-              <HiMenu className="text-deep-300" size={24} />
-            </span>
-          </button>
+            <button
+              className="bg-accent-200 rounded-md px-4 py-2 hover:bg-accent-300 duration-200 transition-all md:hidden"
+              onClick={toggleMenu}
+            >
+              <span className="text-deep-300 font-extrabold text-xl">
+                <HiMenu className="text-deep-300" size={24} />
+              </span>
+            </button>
 
-          <NavBarLinks isExpand={isExpand} toggleMenu={toggleMenu} />
+            <NavBarLinks isExpand={isExpand} toggleMenu={toggleMenu} />
 
-          <HeaderIconButtons />
+            <HeaderIconButtons />
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
+      <WishlistSidebar />
+    </>
   );
 }
