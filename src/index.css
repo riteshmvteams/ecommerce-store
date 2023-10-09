@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .navlink.active {
+    @apply bg-deep-100 text-accent-200;
+  }
+}
