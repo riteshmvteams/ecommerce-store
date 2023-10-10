@@ -6,4 +6,8 @@
   .navlink.active {
     @apply bg-deep-100 text-accent-200;
   }
+
+  .hide_scrollbar::-webkit-scrollbar {
+    @apply hidden;
+  }
 }

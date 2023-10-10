@@ -9,9 +9,14 @@ import WishlistSidebar from "./WishlistSidebar";
 
 export default function Header() {
   const [isExpand, setIsExpand] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsExpand((prev) => !prev);
+  };
+
+  const toggleSidebar = () => {
+    setSidebarOpen((prev) => !prev);
   };
 
   return (
@@ -38,11 +43,14 @@ export default function Header() {
 
             <NavBarLinks isExpand={isExpand} toggleMenu={toggleMenu} />
 
-            <HeaderIconButtons />
+            <HeaderIconButtons toggleSidebar={toggleSidebar} />
           </div>
         </div>
       </header>
-      <WishlistSidebar />
+      <WishlistSidebar
+        sidebarOpen={sidebarOpen}
+        toggleSidebar={toggleSidebar}
+      />
     </>
   );
 }

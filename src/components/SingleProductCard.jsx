@@ -27,9 +27,9 @@ export default function SingleProductCard({ product }) {
         onClick={toggleBookmark}
       >
         {isBookrmarked ? (
-          <AiFillHeart size={28} />
+          <AiFillHeart size={28} fill="red" />
         ) : (
-          <AiOutlineHeart size={28} />
+          <AiOutlineHeart size={28} fill="red" />
         )}
       </button>
     </li>
