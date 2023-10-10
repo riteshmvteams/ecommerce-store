@@ -10,7 +10,8 @@ export const bookmarkSlice = createSlice({
   name: "bookmark",
   initialState,
   reducers: {
-    toggleBookmark: (state, action) => {
+    addBookmark: (state, action) => {
+      console.log(action.payload);
       if (state.bookmarkedProducts.length > 0) {
         const matchIndex = state.bookmarkedProducts.findIndex(
           (prod) => prod.id == action.payload.id
@@ -40,6 +41,6 @@ export const bookmarkSlice = createSlice({
   },
 });
 
-export const { toggleBookmark } = bookmarkSlice.actions;
+export const { addBookmark } = bookmarkSlice.actions;
 
 export default bookmarkSlice.reducer;

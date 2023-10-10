@@ -1,11 +1,23 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
+import { useDispatch } from "react-redux";
+import { addBookmark } from "../redux/features/bookmarkSlice";
+import { useState } from "react";
 
 export default function SingleProductCard({ product }) {
   const [isBookrmarked, setIsBookmarked] = useState(false);
+  const dispatch = useDispatch();
 
-  const toggleBookmark = () => {
+  // book.forEach((bk) => {
+  //   if (bk.id == product.id) {
+  //     setIsBookmarked(true);
+  //   }
+  // });
+
+  const toggleBookmark = (productObj) => {
+    const modifiedObj = { ...productObj, bookmark: true };
+    dispatch(addBookmark(modifiedObj));
+
     setIsBookmarked((prev) => !prev);
   };
 
@@ -24,7 +36,7 @@ export default function SingleProductCard({ product }) {
       </Link>
       <button
         className="absolute top-1 right-1 p-2 bg-deep-300 rounded-lg"
-        onClick={toggleBookmark}
+        onClick={() => toggleBookmark(product)}
       >
         {isBookrmarked ? (
           <AiFillHeart size={28} fill="red" />

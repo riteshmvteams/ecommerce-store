@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { BsFillGrid3X3GapFill, BsHddStack } from "react-icons/bs";
+// import { useSelector } from "react-redux";
 import { products } from "../assets/data/ProductsData";
 import SingleProductCard from "./SingleProductCard";
 
 export default function ProductGrid() {
   const [isGrid, setIsGrid] = useState(true);
+  // const book = useSelector((state) => state.bookmark.bookmarkedProducts);
 
   return (
     <div className="flex flex-col gap-6 grow">
