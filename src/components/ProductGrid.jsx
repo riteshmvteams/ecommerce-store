@@ -11,18 +11,22 @@ export default function ProductGrid() {
       <div className="flex justify-end gap-6 items-center border-b border-b-gray-600 pb-4">
         <span>Select your view Choice:</span>
 
-        <div className="flex gap-4">
+        <div className="flex gap-3">
           <button
-            className={`${isGrid ? "bg-deep-300" : ""} p-2 rounded-md`}
+            className={`${
+              isGrid ? "bg-deep-300" : ""
+            } p-2 rounded-md hover:bg-deep-300`}
             onClick={() => setIsGrid(true)}
           >
-            <BsFillGrid3X3GapFill />
+            <BsFillGrid3X3GapFill fill={`${isGrid ? "#FF57B6" : "white"}`} />
           </button>
           <button
-            className={`${!isGrid ? "bg-deep-300" : ""} p-2 rounded-md`}
+            className={`${
+              !isGrid ? "bg-deep-300" : ""
+            } p-2 rounded-md hover:bg-deep-300`}
             onClick={() => setIsGrid(false)}
           >
-            <BsHddStack />
+            <BsHddStack fill={`${!isGrid ? "#FF57B6" : "white"}`} />
           </button>
         </div>
       </div>
