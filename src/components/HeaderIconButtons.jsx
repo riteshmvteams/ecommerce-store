@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { AiOutlineHeart, AiOutlineShoppingCart } from "react-icons/ai";
 
 export default function HeaderIconButtons({ toggleSidebar }) {
@@ -11,12 +12,12 @@ export default function HeaderIconButtons({ toggleSidebar }) {
         </div>
       </button>
 
-      <button className="relative">
+      <Link to="/cart" className="relative">
         <AiOutlineShoppingCart size={26} className="text-gray-100" />
         <div className="absolute -top-3 -right-2 px-1.5 rounded-md bg-accent-200">
           <span className="text-sm">0</span>
         </div>
-      </button>
+      </Link>
     </div>
   );
 }
