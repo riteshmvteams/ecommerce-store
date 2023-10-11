@@ -3,6 +3,7 @@ import { BsFillGrid3X3GapFill, BsHddStack } from "react-icons/bs";
 // import { useSelector } from "react-redux";
 import { products } from "../assets/data/ProductsData";
 import SingleProductCard from "./SingleProductCard";
+import SingleProductStack from "./SingleProductStack";
 
 export default function ProductGrid() {
   const [isGrid, setIsGrid] = useState(true);
@@ -36,12 +37,16 @@ export default function ProductGrid() {
       <div>
         {isGrid ? (
           <ul className="product__grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3  gap-6">
-            {products.map((product) => {
+            {products?.map((product) => {
               return <SingleProductCard key={product.id} product={product} />;
             })}
           </ul>
         ) : (
-          <h1>Currently in progress</h1>
+          <ul className="flex flex-col gap-6">
+            {products?.map((product) => {
+              return <SingleProductStack key={product.id} product={product} />;
+            })}
+          </ul>
         )}
       </div>
     </div>

@@ -22,10 +22,14 @@ export default function SingleProductCard({ product }) {
   };
 
   return (
-    <li className="flex-1 p-6 rounded-lg bg-deep-100 relative">
+    <li className="flex-1 p-6 rounded-lg bg-deep-300 relative">
       <Link to={`/products/${product.id}`}>
         <figure className="">
-          <img src={product.img} alt={product.description} />
+          <img
+            src={product.img}
+            alt={product.description}
+            className="bg-white"
+          />
         </figure>
         <h4 className="mt-4 mb-2 text-xl text-center text-gray-100">
           {product.description}

@@ -10,8 +10,7 @@ export default function WishlistSidebar({ toggleSidebar, sidebarOpen }) {
     (state) => state.bookmark.bookmarkedProducts
   );
 
-  const navigateProducts = (e) => {
-    e.preventDefault();
+  const navigateProducts = () => {
     toggleSidebar();
     navigate("/products");
   };
@@ -46,7 +45,9 @@ export default function WishlistSidebar({ toggleSidebar, sidebarOpen }) {
                         <h4 className="text-xl capitalize font-medium text-gray-100">
                           {product.description}
                         </h4>
-                        <MdOutlineClose size={26} />
+                        <button className="">
+                          <MdOutlineClose size={26} />
+                        </button>
                       </div>
                       <p className="text-accent-200">${product.price}</p>
                       <Button className="text-deep-300 bg-accent-200 hover:bg-accent-300 mt-auto text-xs">
@@ -60,7 +61,7 @@ export default function WishlistSidebar({ toggleSidebar, sidebarOpen }) {
               <div className="flex flex-col gap-4 h-[50vh] justify-center items-center">
                 <h3 className="text-3xl font-semibold">No products Saved</h3>
                 <Button
-                  onClick={(e) => navigateProducts(e)}
+                  onClick={() => navigateProducts()}
                   className="text-deep-300 bg-accent-200 hover:bg-accent-300"
                 >
                   Shop now
